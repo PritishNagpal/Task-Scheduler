@@ -33,11 +33,17 @@ const updateBtn = document.querySelector("#updateBtn");
 
 const batchName = document.querySelector("#batch_name");
 const teacherName = document.querySelector("#teacher_name");
+const updateteacherdropDown = document.querySelector("#newTName");
+const updateBatchDropDown = document.querySelector("#newBName");
 
 displayTeacherName(dropDownTeacher);
 displayTeacherName(teacherName);
+displayTeacherName(updateteacherdropDown);
+
 displayBatchName(dropDownBatch);
 displayBatchName(batchName);
+displayBatchName(updateBatchDropDown);
+
 displayEvents("All", "All");
 filter();
 
