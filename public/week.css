@@ -1,12 +1,9 @@
-/* Styling the body */
 body {
   margin: 0;
   padding: 0;
   background-color: #000000;
 }
 
-/* Styling section, giving background
-            image and dimensions */
 section {
   width: 100%;
   height: 100vh;
@@ -14,7 +11,6 @@ section {
   justify-content: center;
 }
 
-/* Styling the left floatig section */
 section .leftBox {
   width: 50%;
   height: 100%;
@@ -22,39 +18,16 @@ section .leftBox {
   padding: 50px;
   box-sizing: border-box;
 }
-
-/* Styling the background of 
-            left floatig section */
 section .leftBox .content {
   color: #fff;
   background: rgba(0, 0, 0, 0.5);
   padding: 40px;
   transition: 0.5s;
 }
-
-/* Styling the hover effect  
-            of left floatig section */
 section .leftBox .content:hover {
   background: #e91e63;
 }
 
-/* Styling the header of left 
-            floating section */
-section .leftBox .content h1 {
-  margin: 0;
-  padding: 0;
-  font-size: 50px;
-  text-transform: uppercase;
-}
-
-/* Styling the paragraph of 
-            left floating section */
-section .leftBox .content p {
-  margin: 10px 0 0;
-  padding: 0;
-}
-
-/* Styling the three events section */
 section .events {
   position: relative;
   width: 50%;
@@ -64,8 +37,6 @@ section .events {
   box-sizing: border-box;
 }
 
-/* Styling the links of 
-        the events section */
 section .events ul {
   position: absolute;
   top: 50%;
@@ -75,7 +46,6 @@ section .events ul {
   box-sizing: border-box;
 }
 
-/* Styling the lists of the event section */
 section .events ul li {
   list-style: none;
   background: #fff;
@@ -84,7 +54,6 @@ section .events ul li {
   margin: 15px 0;
 }
 
-/* Styling the time class of events section */
 section .events ul li .time {
   position: relative;
   padding: 20px;
@@ -97,14 +66,10 @@ section .events ul li .time {
   transition: 0.5s;
 }
 
-/* Styling the hover effect
-            of events section */
 section .events ul li:hover .time {
   background: #e91e63;
 }
 
-/* Styling the header of time 
-            class of events section */
 section .events ul li .time h2 {
   position: absolute;
   margin: 0;
@@ -117,14 +82,10 @@ section .events ul li .time h2 {
   line-height: 30px;
 }
 
-/* Styling the texts of time 
-        class of events section */
 section .events ul li .time h2 span {
   font-size: 30px;
 }
 
-/* Styling the details 
-        class of events section */
 section .events ul li .details {
   padding: 20px;
   background: #fff;
@@ -134,8 +95,6 @@ section .events ul li .details {
   float: left;
 }
 
-/* Styling the header of the 
-        details class of events section */
 section .events ul li .details h3 {
   position: relative;
   margin: 0;
@@ -143,8 +102,6 @@ section .events ul li .details h3 {
   font-size: 22px;
 }
 
-/* Styling the lists of details 
-        class of events section */
 section .events ul li .details p {
   position: relative;
   margin: 10px 0 0;
@@ -152,8 +109,6 @@ section .events ul li .details p {
   font-size: 16px;
 }
 
-/* Styling the links of details
-        class of events section */
 section .events ul li .details a {
   display: inline-block;
   text-decoration: none;
@@ -164,7 +119,6 @@ section .events ul li .details a {
   transition: 0.5s;
 }
 
-/* Styling the details class's hover effect */
 section .events ul li .details a:hover {
   background: #e91e63;
   color: #fff;
@@ -176,9 +130,6 @@ section .events ul li .details a:hover {
   flex-flow: column;
 }
 #container {
-  /* display: flex;
-  flex-flow: row;
-  justify-content: center; */
   padding: 50px;
 }
 #calendar {
