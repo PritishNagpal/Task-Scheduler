@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calendar App Vanilla JS</title>
+
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+
+    <div id="container">
+      <div id="header">
+        <div id="monthDisplay"></div>
+        <div>
+          <button id="backButton">Back</button>
+          <button id="nextButton">Next</button>
+          <button id="weekButton">WeekView</button>
+          <button id="dayButton">DayView</button>
+          <button data-modal-target="#modal_addtask" >Add Task</button>
+          <button data-modal-target="#modal_addteacher">Add Faculty</button>
+          <button data-modal-target="#modal_batch">Add Batch</button>
+        </div>
+      </div>
+
+      <div id="weekdays">
+        <div>Sunday</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
+      </div>
+
+      <div class="modal" id="modal_addtask">
+        <div class="modal-header">
+          <div class="title">Add Task To The Scheduler</div>
+          <button data-close-button class="close-button">&times</button>
+        </div>
+
+        <div class="add_schedule">
+          <form class='form' action="/create" method="POST" >
+            <label for="teacher_name">Teacher's Name</label>
+            <select name="teacher_name" id="teacher_name">
+              <option value="None">None</option>
+            </select>
+            <label for="batch_name">Batch's Name</label>
+            <select name="batch_name" id="batch_name">
+              <option value="None">None</option>
+            </select>
+            <label for="start_time">Start Time</label>
+            <input  type="time" name="start_time" id='start_time' required>
+            <label for="end_time">End Time</label>
+            <input type="time" name="end_time" id='end_time' required>
+            <label for="date">Lecture Date</label>
+            <input type="date" name="date" id='manual_date' required>
+            <label for="task">Enter Task</label>
+            <input placeholder="Task" type="text" name="task" id='task' required>
+            <button type="submit" id="submit_schedule">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal" id="modal_addteacher">
+        <div class="modal-header">
+          <div class="title">Add Teacher Detail to System</div>
+          <button data-close-button class="close-button">&times</button>
+        </div>
+        <div class="add_schedule">
+          <form class='form' action="/teacher" method="POST" >
+            <label for="faculty_name">Faculty's Name </label>
+            <input type="text" name="faculty_name" id="faculty_name">
+            <button type="submit" id="submit_schedule">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal" id="modal_batch">
+        <div class="modal-header">
+          <div class="title">Add Batch Detail to System</div>
+          <button data-close-button class="close-button">&times</button>
+        </div>
+        <div class="add_schedule">
+          <form class='form' action="/batch" method="POST" >
+            <label for="batch_name">Batch's Name -></label>
+            <input type="text" name="batch_name" id="batch_name">
+            <br>
+            <button type="submit" id="submit_schedule"">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div id="overlay">X</div>
+      <div id="calendar"></div>
+    </div>
+    <script defer src="fetchDropDown.js"></script>
+    <script defer src="index.js"></script>
+    <script defer src="https://kit.fontawesome.com/704ff50790.js" crossorigin="anonymous"></script>
+    <!-- <script src="day.js"></script> -->
+  </body>
+</html>

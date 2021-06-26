@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calendar App Vanilla JS</title>
+
+    <link rel="stylesheet" href="day.css">
+  </head>
+  <body>
+    
+    <div id="container">
+      <div id="header">
+          <div class="top">
+            <div id="dateDisplay"><%=`${day} ${month}, ${year}`%></div>
+            <div class="hidden"><%=`${year}-${monthNum}-${day}`%></div>
+            <div><i class="fas fa-trash-alt cursor dragDel"></i></div>
+          </div>
+        <div class="side">
+          <div class="filter">
+        <div class="filterTeacher">
+          Filter:
+        </div>
+        <div class="teacherfilter">
+          <div class="dropdown">
+            <div class="teacherTitle">
+            Teacher
+            </div>
+            <select class="drop drop-teacher">
+              <option>All</option>
+            </select>
+        </div>
+      </div>
+      <div class="batchfilter">
+        <div class="dropdown">
+          <div class="batchTtile">
+          Batch
+          </div>
+          <select class="drop drop-batch">
+            <option>All</option>
+          </select>
+      </div>
+      <div class = "allbtn">
+        <button class="search-button">Search</button>
+        <button class="monthBtn">Month View</button>
+        <button class="weekBtn">Week View</button>
+        <button data-modal-target="#modal_addtask" >Add Task</button>
+    </div> 
+    </div>
+      </div>
+        <div class="flex">
+            <div class="flex-item">
+                <div class="flex-sub-item">Teacher</div>
+                <div class="flex-sub-item">Batch</div>
+                <div class="flex-sub-item">Start Time</div>
+                <div class="flex-sub-item">End Time</div>
+                <div class="flex-sub-item ">Task</div>
+                <div class="flex-sub-item">Delete</div>
+                <div class="flex-sub-item">Edit</div>
+            </div>
+          </div>
+        </div>
+       
+        <div class="modal" id="modal_addtask">
+          <div class="modal-header">
+            <div class="title">Add Task To The Scheduler</div>
+            <button data-close-button class="close-button">&times</button>
+          </div>
+         
+          <div class="add_schedule">
+            <form class='form' action="/create" method="POST" >
+              <label for="teacher_name">Teacher's Name:</label>
+              <select name="teacher_name" id="teacher_name">
+                <option value="None">None</option>
+              </select>
+              <label for="batch_name">Batch's Name:</label>
+              <select name="batch_name" id="batch_name">
+                <option value="None">None</option>
+              </select>
+              <label for="start_time">Start Time:</label>
+              <input type="time" name="start_time" id='start_time' required>
+              <label for="end_time">End Time:</label>
+              <input type="time" name="end_time" id='end_time' required>
+              <label for="date">Lecture Date:</label>
+              <input type="date" name="date" id='manual_date' required>
+              <label for="task">Enter Task:</label>
+              <input type="text" name="task" id='task' required>
+              <button type="submit" id="submit_schedule">Submit</button>
+            </form>
+          </div>
+        </div>
+          <div class="modal-bg">
+             <div class="edit-modal">
+              <input type="text" placeholder="Teacher" id="newTName">
+              <input type="text" placeholder="Batch" id="newBName">
+              <input type="time" placeholder="Start Time" id="newST">
+              <input type="time" placeholder="End Time" id="newET">
+              <input type="text" placeholder="Task" id="newTask">
+              <button type="submit" id="updateBtn">Update</button>
+              <span class="modal-close">X</span>
+             </div>
+          </div>
+    </div>
+    <div id="overlay"></div>
+        <script src="https://kit.fontawesome.com/bf83cce012.js" crossorigin="anonymous"></script>
+        <script defer src="fetchDropDown.js"></script>
+        <script defer src="./dayPage/displayEvents.js"></script>
+        <script defer src="./dayPage/updateSchedule.js"></script>
+        <script defer src="./dayPage/deleteSchedule.js"></script>
+        <script defer src="./dayPage/filter.js"></script>
+    <script defer src="day.js"></script>
+  </body>
+</html>

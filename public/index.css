@@ -1,0 +1,324 @@
+body {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  background-color: #000000;
+}
+button {
+  width: 75px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px gray;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+}
+
+#header {
+  padding: 10px;
+  color: #d36c6c;
+  font-size: 26px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+#header button {
+  background-color: #92a1d1;
+}
+#container {
+  width: 770px;
+}
+#weekdays {
+  width: 100%;
+  display: flex;
+  color: #247ba0;
+}
+#weekdays div {
+  width: 100px;
+  padding: 10px;
+}
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.day {
+  width: 100px;
+  padding: 10px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0);
+  margin: 5px;
+  /* box-shadow: 0px 0px 3px #CBD4C2; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 50%;
+  clip-path: stroke-box;
+  text-align: center;
+  text-justify: auto;
+  color: #fff;
+}
+.day:hover {
+  background-color: #3bdad5;
+}
+
+.day + #currentDay {
+  background-color: #d80f0fdb;
+  font-weight: bolder;
+  color: #fff;
+}
+.event {
+  font-size: 10px;
+  padding: 3px;
+  background-color: #58bae4;
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+}
+.padding {
+  cursor: not-allowed;
+  background-color: #000;
+  box-shadow: none;
+}
+
+.padding:hover {
+  background-color: #000;
+}
+
+#newEventModal,
+#deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+}
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+  border: 2px solid red;
+}
+#cancelButton,
+#deleteButton {
+  background-color: #d36c6c;
+}
+#saveButton,
+#closeButton {
+  background-color: #92a1d1;
+}
+#eventText {
+  font-size: 14px;
+}
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* modal code */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  color: rgb(0, 0, 0);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border-radius: 10px;
+  z-index: 10;
+  width: 500px;
+  max-width: 80%;
+  padding: 10px 35px 35px 35px;
+  border-radius: 40px;
+  background: #ffffff;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  padding-top: 24px;
+  letter-spacing: 0.5px;
+}
+
+.fields {
+  width: 100%;
+  padding: 75px 5px 5px 5px;
+}
+.fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  color: #555;
+  padding: 20px 10px 20px 5px;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  color: rgb(241, 15, 15);
+  right: 0;
+  bottom: 0;
+  background-color: rgba(94, 89, 98, 0.659);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.add_schedule {
+  /* width: 25em;
+  max-width: 90%;
+  margin: 0 auto;
+  margin: 1em; */
+  display: flex;
+}
+
+.add_schedule label {
+  display: block;
+  margin: 0.5em 0;
+}
+
+.add_schedule label input {
+  font-size: 1.2em;
+  padding: 0.5em;
+}
+
+.add_schedule button {
+  font-size: 0.8em;
+  color: black;
+}
+
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  padding: 20px 0px;
+  width: 150px;
+  border-radius: 6px;
+  text-align: center;
+  overflow: hidden;
+  height: 20px;
+}
+
+/* effect-4 styles */
+.effect.effect-4 {
+  transition: all 0.2s linear 0s;
+  margin-top: 10px;
+}
+.effect.effect-4:before {
+  content: "\f064";
+  /* margin-top: 55px; */
+  font-family: FontAwesome;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  transform: scale(0, 1);
+  transition: all 0.2s linear 0s;
+}
+.effect.effect-4:hover {
+  text-indent: -9999px;
+}
+.effect.effect-4:hover:before {
+  transform: scale(1, 1);
+  text-indent: 0;
+}
+
+#submit_schedule {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  /* padding: 16px 32px; */
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin: 10px auto;
+  height: 40px;
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  /* justify-content: center; */
+}
+
+input {
+  border: 1px solid black;
+}
