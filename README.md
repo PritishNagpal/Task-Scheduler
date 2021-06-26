@@ -5,8 +5,6 @@ Project Link https://pepcoding-scheduler.herokuapp.com/
   <h1>Scheduler Calendar</h1>
 </div>
 
-<h1 align="center">Demo Video</h1>\
-
 #### This is an Events Scheduling dummy App
 
 #### This app has calendar for all the previous and upcoming year, and it can be used to schedule events/classes for Teachers
