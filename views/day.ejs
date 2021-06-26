@@ -88,11 +88,16 @@
           </div>
         </div>
           <div class="modal-bg">
-             <div class="edit-modal">
-              <input type="text" placeholder="Teacher" id="newTName">
-              <input type="text" placeholder="Batch" id="newBName">
-              <input type="time" placeholder="Start Time" id="newST">
-              <input type="time" placeholder="End Time" id="newET">
+              <div class="edit-modal">
+              <label for="teacher">Teacher</label>
+              <select name="mod" id="newTName"></select>
+              <label for="batch">Batch</label>
+              <select name="mod" id="newBName"></select>
+              <label for="">Start Time</label>
+              <input type="time" id="newST">
+              <label for="">End Time</label>
+              <input type="time" placeholder="" id="newET">
+              <label for="">Task</label>
               <input type="text" placeholder="Task" id="newTask">
               <button type="submit" id="updateBtn">Update</button>
               <span class="modal-close">X</span>
